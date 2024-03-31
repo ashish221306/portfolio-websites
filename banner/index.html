@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=K2D:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=K2D:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #000;
+        color: #fff;
+      }
+      .thumbnail{
+        margin-left: 80px;
+        transition: all 0.3s;
+      }
+      .thumbnail:hover{
+        transform: scale(1.2) translateX(20px);
+      }
+      .banner .left {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .banner .left img {
+        object-fit: contain;
+      }
+      .right {
+        width: 50%;
+        padding: 40px;
+      }
+      .banner {
+        display: flex;
+      }
+      .banner h1 {
+        font-family: "K2D", sans-serif;
+        font-weight: 800;
+        font-size: 100px;
+      }
+      .banner p {
+        font-family: "Inter", sans-serif;
+        font-size: 23px;
+        margin-top: 20px;
+      }
+      .banner .title {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 32px;
+      }
+      .banner span {
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+      }
+      .rating {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 32px;
+      }
+      .sizes .number {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+        margin-bottom: 36px;
+      }
+      .sizes .number span.active {
+        background: yellow;
+      }
+      .sizes .number span {
+        height: 50px;
+        width: 50px;
+        background: #fff;
+        color: #000;
+        flex-shrink: 0;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        font-size: 20px;
+        font-family: "K2D", sans-serif;
+        border-radius: 8px;
+      }
+      .colors div {
+        margin-top: 20px;
+      }
+      .colors div span {
+        height: 20px;
+        width: 20px;
+        display: inline-block;
+        border-radius: 50%;
+        gap: 10px;
+      }
+      .colors div span:nth-of-type(1) {
+        background: yellow;
+      }
+      .colors div span:nth-of-type(2) {
+        background: white;
+      }
+      .colors div span:nth-of-type(3) {
+        background: #69ff23;
+      }
+      .buy {
+        height: 80px;
+        min-width: 132px;
+        background: yellow;
+        font-size: 30px;
+        font-family: "K2D", sans-serif;
+        border-radius: 20px;
+      }
+      .cta{
+        display: flex;
+        justify-content: space-between;
+      }
+      header{
+        padding: 40px;
+        position: absolute;
+      }
+      .options{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 20px;
+        gap: 10px;
+      }
+      .options img{
+        z-index: 3;
+        cursor: pointer;
+        height: 60px;
+        width: 60px;
+        background: #1c1b1b;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+        <img height="20" width="48" src="./images/logo.png"/>
+    </header>
+    <div class="banner">
+      <div class="left">
+        <div class="options">
+            <img src="./images/black.png"/>
+            <img src="./images/gray.png"/>
+            <img src="./images/yellow.png"/>
+            <img src="./images/white.png"/>
+        </div>
+        <img class="thumbnail" height="500" width="500" src="./images/black.png" />
+      </div>
+      <div class="right">
+        <h1>NIKE AIR</h1>
+        <div class="info">
+          <div class="title">
+            <div class="title-text">
+              <span>NIKE AIR</span>
+              <p>Air Max 270 GO Shoes</p>
+            </div>
+            <div class="price">$180.99</div>
+          </div>
+          <div class="rating">
+            <img src="./images/star.svg" />
+            <img src="./images/star.svg" />
+            <img src="./images/star.svg" />
+            <img src="./images/star.svg" />
+            <img src="./images/star.svg" />
+          </div>
+          <div class="sizes">
+            <span>Size</span>
+            <div class="number">
+              <span class="active">7</span>
+              <span>7.5</span>
+              <span>8</span>
+              <span>9</span>
+            </div>
+          </div>
+          <div class="cta">
+            <div class="colors">
+              <span>Colors</span>
+              <div>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <button class="buy">Buy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+        const options=document.querySelectorAll('.options img')
+        options.forEach(img=>{
+            img.onclick=()=>{
+                document.querySelector('.thumbnail').setAttribute('src',img.getAttribute('src'))
+            }
+        })
+    </script>
+  </body>
+</html>
